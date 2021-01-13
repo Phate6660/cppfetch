@@ -14,6 +14,8 @@ bool isWanted(const std::string & line) {
 // The current point of this function is for testing different
 // operations on open files being read.
 // Currently it reads a file and extracts the line containing "PRETTY_NAME".
+// TODO: Figure out how to split the line into an array or vector
+// that is delimited by an "=".
 string distro() {
     ifstream osrelease("/etc/os-release");
     string distro,line;

@@ -1,7 +1,7 @@
 *
-!*.cpp
 !.gitignore
-!*.h
 !LICENSE
 !meson.build
 !README.md
+!src/
+!src/*

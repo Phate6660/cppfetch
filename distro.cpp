@@ -4,11 +4,9 @@
 #include <sstream>
 #include <vector>
 
-using namespace std;
-
 // Thank you StackOverflow.
 bool isWanted(const std::string & line) {
-    return (line.find("PRETTY_NAME") != string::npos);
+    return (line.find("PRETTY_NAME") != std::string::npos);
 }
 
 // The current point of this function is for testing different
@@ -16,12 +14,12 @@ bool isWanted(const std::string & line) {
 // Currently it reads a file and extracts the line containing "PRETTY_NAME".
 // TODO: Figure out how to split the line into an array or vector
 // that is delimited by an "=".
-string distro() {
-    ifstream osrelease("/etc/os-release");
-    string distro,line;
+std::string distro() {
+    std::ifstream osrelease("/etc/os-release");
+    std::string distro,line;
     while (getline(osrelease, line)) {
         if (isWanted(line))
-        cout << line << endl;
+        std::cout << line << std::endl;
     }
     osrelease.close();
     return line;

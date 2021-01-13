@@ -1,0 +1,5 @@
+*
+!*.cpp
+!.gitignore
+!LICENSE
+!README.md

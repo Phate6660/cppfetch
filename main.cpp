@@ -1,9 +1,7 @@
 #include <iostream>
-#include <fstream>
 
 using namespace std;
 
-bool isWanted(const string & line);
 string distro();
 
 int main() {

@@ -16,14 +16,26 @@ ninja # Or whatever generator you have set for `meson`
       # `make` is the default but I personally really like `ninja`
 ```
 
+## Example output
+
+`$ ./build/cppfetch`
+
+```
+Distro: Gentoo/Linux
+Editor: /usr/bin/emacsclient
+Shell:  /bin/bash
+User:   valley
+```
+
 ## TODO
 
 - ASCII art (maybe? not sure yet)
 - CPU Info
 - DE/WM Info
 - ~~Distro Info~~
-- Editor Info
+- ~~Editor Info~~
 - Memory Info
 - Music Info
-- Shell Info
+- ~~Shell Info~~
 - Terminal Info
+- ~~User Info~~

@@ -4,5 +4,6 @@ project('cppfetch', 'cpp',
 
 executable('cppfetch',
            'distro.cpp',
+           'environment.cpp',
            'main.cpp',
            install : true)

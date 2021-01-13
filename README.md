@@ -10,10 +10,9 @@ such programs in other languages.
 ```bash
 git clone https://github.com/Phate6660/cppfetch
 cd cppfetch
-mkdir build && cd $_
-meson ..
-ninja # Or whatever generator you have set for `meson`
-      # `make` is the default but I personally really like `ninja`
+meson build
+ninja -C build/ # Or whatever generator you have set for `meson`
+                # `make` is the default but I personally really like `ninja`
 ```
 
 ## Example output

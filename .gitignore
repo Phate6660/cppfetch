@@ -1,7 +1,17 @@
+# Blacklist everything by default.
 *
+
+# Whitelist the gitignore, license, readme, meson config,
+# and all files in the source dir.
 !.gitignore
 !LICENSE
 !meson.build
 !README.md
 !src/
 !src/*
+
+# Any Emacs-related files, placed at the end to
+# overwite the whitelist rules above.
+*~
+\#*\#
+.\#*

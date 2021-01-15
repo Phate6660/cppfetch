@@ -24,6 +24,7 @@ int main(int argc, char** argv) {
     } else {
         // Print the output.
         std::cout <<
+            "CPU:    " << cpu() << std::endl <<
             "Distro: " << distro() << std::endl <<
             "Editor: " << editor() << std::endl <<
             "Shell:  " << shell() << std::endl <<

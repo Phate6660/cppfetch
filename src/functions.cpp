@@ -1,7 +1,13 @@
 // This file contains re-usable functions for the project
+#include <fstream>
 #include <iostream>
 #include <vector>
 #include "functions.hpp"
+
+// Thank you StackOverflow.
+bool isWanted(const std::string & line, std::string field) {
+    return (line.find(field) != std::string::npos);
+}
 
 // Thanks to StackOverflow, using this to split a string based on a delimiter.
 std::vector<std::string> explode(const std::string& str, const char& ch) {
@@ -25,4 +31,15 @@ std::vector<std::string> explode(const std::string& str, const char& ch) {
     if (!next.empty())
          result.push_back(next);
     return result;
+}
+
+std::string parse(std::string field, std::string file) {
+    std::ifstream thefile(file); // Open the file for reading.
+    std::string output,line,line_pre_array;
+    while (getline(thefile, line)) {
+        if (isWanted(line, field))
+            line_pre_array = line;
+    }
+    thefile.close(); // Close the file.
+    return line_pre_array;
 }

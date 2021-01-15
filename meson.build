@@ -5,5 +5,7 @@ project('cppfetch', 'cpp',
 executable('cppfetch',
            'src/distro.cpp',
            'src/environment.cpp',
+           'src/functions.cpp',
            'src/main.cpp',
+           'src/uptime.cpp',
            install : true)

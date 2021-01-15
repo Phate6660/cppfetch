@@ -23,6 +23,7 @@ ninja -C build/ # Or whatever generator you have set for `meson`
 Distro: Gentoo/Linux
 Editor: /usr/bin/emacsclient
 Shell:  /bin/bash
+Uptime: 12d 20h 21m
 User:   valley
 ```
 
@@ -37,4 +38,5 @@ User:   valley
 - Music Info
 - ~~Shell Info~~
 - Terminal Info
+- ~~Uptime Info~~
 - ~~User Info~~

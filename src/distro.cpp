@@ -1,9 +1,11 @@
 #include <algorithm>
-#include <iostream>
 #include <fstream>
-#include <sstream>
-#include <vector>
-#include "functions.h"
+#include "functions.hpp"
+
+// Thank you StackOverflow.
+bool isWanted(const std::string & line) {
+    return (line.find("PRETTY_NAME") != std::string::npos);
+}
 
 // Parse `/etc/os-release` for the PRETTY_NAME string
 // and extract the value of the variable.
@@ -13,7 +15,7 @@ std::string distro() {
     std::ifstream osrelease("/etc/os-release"); // Open the file for reading.
     std::string distro,line,line_pre_array;
     while (getline(osrelease, line)) {
-        if (isWanted(line, "PRETTY_NAME"))
+        if (isWanted(line))
             line_pre_array = line;
     }
     osrelease.close(); // Close the file/

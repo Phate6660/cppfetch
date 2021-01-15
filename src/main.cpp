@@ -27,6 +27,7 @@ int main(int argc, char** argv) {
             "Distro: " << distro() << std::endl <<
             "Editor: " << editor() << std::endl <<
             "Shell:  " << shell() << std::endl <<
+            "Uptime: " << uptime() << std::endl <<
             "User:   " << user() << std::endl;
         return 0;
     }

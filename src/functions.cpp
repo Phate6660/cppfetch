@@ -1,14 +1,9 @@
 // This file contains re-usable functions for the project
 #include <iostream>
 #include <vector>
-#pragma once
+#include "functions.hpp"
 
-// Thank you StackOverflow.
-bool isWanted(const std::string & line, std::string field) {
-    return (line.find(field) != std::string::npos);
-}
-
-// Also thanks to StackOverflow, using this to split a string based on a delimiter.
+// Thanks to StackOverflow, using this to split a string based on a delimiter.
 std::vector<std::string> explode(const std::string& str, const char& ch) {
     std::string next;
     std::vector<std::string> result;

@@ -20,6 +20,7 @@ ninja -C build/ # Or whatever generator you have set for `meson`
 `$ ./build/cppfetch`
 
 ```
+CPU:    Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz
 Distro: Gentoo/Linux
 Editor: /usr/bin/emacsclient
 Shell:  /bin/bash
@@ -30,7 +31,7 @@ User:   valley
 ## TODO
 
 - ASCII art (maybe? not sure yet)
-- CPU Info
+- ~~CPU Info~~
 - DE/WM Info
 - ~~Distro Info~~
 - ~~Editor Info~~

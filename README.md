@@ -20,6 +20,12 @@ ninja -C build/ # Or whatever generator you have set for `meson`
 `$ ./build/cppfetch`
 
 ```
+ ██████╗██████╗ ██████╗ ███████╗███████╗████████╗ ██████╗██╗  ██╗
+██╔════╝██╔══██╗██╔══██╗██╔════╝██╔════╝╚══██╔══╝██╔════╝██║  ██║
+██║     ██████╔╝██████╔╝█████╗  █████╗     ██║   ██║     ███████║
+██║     ██╔═══╝ ██╔═══╝ ██╔══╝  ██╔══╝     ██║   ██║     ██╔══██║
+╚██████╗██║     ██║     ██║     ███████╗   ██║   ╚██████╗██║  ██║
+ ╚═════╝╚═╝     ╚═╝     ╚═╝     ╚══════╝   ╚═╝    ╚═════╝╚═╝  ╚═╝
 CPU:    Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz
 Distro: Gentoo/Linux
 Editor: /usr/bin/emacsclient
@@ -31,6 +37,9 @@ User:   valley
 ## TODO
 
 - ASCII art (maybe? not sure yet)
+  + ~~Disabled by default, enable with `l` or `logo`~~
+  + ~~Hardoded ascii art~~
+  + User supplied ascii art
 - ~~CPU Info~~
 - DE/WM Info
 - ~~Distro Info~~

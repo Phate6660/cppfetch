@@ -17,7 +17,7 @@ ninja -C build/ # Or whatever generator you have set for `meson`
 
 ## Example output
 
-`$ ./build/cppfetch`
+`$ ./build/cppfetch l`
 
 ```
  ██████╗██████╗ ██████╗ ███████╗███████╗████████╗ ██████╗██╗  ██╗
@@ -26,12 +26,13 @@ ninja -C build/ # Or whatever generator you have set for `meson`
 ██║     ██╔═══╝ ██╔═══╝ ██╔══╝  ██╔══╝     ██║   ██║     ██╔══██║
 ╚██████╗██║     ██║     ██║     ███████╗   ██║   ╚██████╗██║  ██║
  ╚═════╝╚═╝     ╚═╝     ╚═╝     ╚══════╝   ╚═╝    ╚═════╝╚═╝  ╚═╝
-CPU:    Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz
-Distro: Gentoo/Linux
-Editor: /usr/bin/emacsclient
-Shell:  /bin/bash
-Uptime: 12d 20h 21m
-User:   valley
+CPU:         Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz
+Distro:      Gentoo/Linux
+Editor:      /usr/bin/emacsclient
+Environment: herbstluftwm
+Shell:       /bin/bash
+Uptime:      15d 14h 44m
+User:        valley
 ```
 
 ## TODO
@@ -41,7 +42,7 @@ User:   valley
   + ~~Hardoded ascii art~~
   + User supplied ascii art
 - ~~CPU Info~~
-- DE/WM Info
+- ~~DE/WM Info~~
 - ~~Distro Info~~
 - ~~Editor Info~~
 - Memory Info

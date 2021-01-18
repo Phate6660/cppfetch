@@ -30,6 +30,7 @@ CPU:         Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz
 Distro:      Gentoo/Linux
 Editor:      /usr/bin/emacsclient
 Environment: herbstluftwm
+Memory:      16GB
 Shell:       /bin/bash
 Uptime:      15d 14h 44m
 User:        valley
@@ -46,6 +47,9 @@ User:        valley
 - ~~Distro Info~~
 - ~~Editor Info~~
 - Memory Info
+  + Free
+  + Proper formatting (e.g. decimal points / extra calculations where necessary)
+  + ~~Total~~
 - Music Info
 - ~~Shell Info~~
 - Terminal Info

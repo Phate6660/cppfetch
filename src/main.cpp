@@ -17,6 +17,7 @@ void output() {
         "Distro:      " << distro() << std::endl <<
         "Editor:      " << editor() << std::endl <<
         "Environment: " << de_wm() << std::endl <<
+        "Memory:      " << memory() << std::endl <<
         "Shell:       " << shell() << std::endl <<
         "Uptime:      " << uptime() << std::endl <<
         "User:        " << user() << std::endl;

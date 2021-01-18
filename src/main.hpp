@@ -4,6 +4,7 @@ std::string cpu();
 std::string de_wm();
 std::string distro();
 std::string editor();
+std::string memory();
 std::string shell();
 std::string uptime();
 std::string user();

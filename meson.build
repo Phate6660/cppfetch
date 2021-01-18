@@ -8,5 +8,6 @@ executable('cppfetch',
            'src/environment.cpp',
            'src/functions.cpp',
            'src/main.cpp',
+           'src/memory.cpp',
            'src/uptime.cpp',
            install : true)

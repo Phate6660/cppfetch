@@ -51,6 +51,7 @@ User:        valley
   + ~~Total~~
   + Used
 - Music Info
+- Package Count
 - ~~Shell Info~~
 - Terminal Info
 - ~~Uptime Info~~

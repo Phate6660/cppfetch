@@ -47,8 +47,8 @@ User:        valley
 - ~~Distro Info~~
 - ~~Editor Info~~
 - Memory Info
-  + Free
   + Proper formatting (e.g. decimal points / extra calculations where necessary)
+  + Used
   + ~~Total~~
 - Music Info
 - ~~Shell Info~~

@@ -48,8 +48,8 @@ User:        valley
 - ~~Editor Info~~
 - Memory Info
   + Proper formatting (e.g. decimal points / extra calculations where necessary)
-  + Used
   + ~~Total~~
+  + Used
 - Music Info
 - ~~Shell Info~~
 - Terminal Info

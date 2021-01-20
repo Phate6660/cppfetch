@@ -1,6 +1,5 @@
 #include <algorithm>
 #include <fstream>
-#include <regex>
 #include "functions.hpp"
 
 // Parse `/etc/os-release` for the PRETTY_NAME string
@@ -30,7 +29,7 @@ std::string distro() {
             perror("Error deleting temporary file");
         }
         std::string message = "Android " + ret;
-        message = std::regex_replace(message, std::regex("^ +"), "");
+        message.erase(std::remove(message.begin(), message.end(), '\n'), message.end());
         return message;
     }
 }

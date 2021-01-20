@@ -27,9 +27,9 @@ std::string de_wm() {
     val = std::getenv("HOME");
     std::string home = val;
     std::string xinitrc{ 
-        std::system("which getprop > /dev/null 2>&1") == true ? 
-            home.append("/.vnc/xstartup") 
-            : home.append("/.xinitrc")};
+        std::system("which getprop > /dev/null 2>&1") ? 
+            home.append("/.xinitrc")
+            : home.append("/.vnc/xstartup") };
         std::ifstream file;
     // Thank you StackOverflow for lines 34-53.
     // It reads the last line of the file by by going to one character before EOF
@@ -57,9 +57,9 @@ std::string de_wm() {
         std::vector<std::string> wm_vector = explode(lastline, ' ');
         int n = wm_vector.size();
         int element{ 
-            std::system("which getprop > /dev/null 2>&1") == true ? 
-                0 
-                : n - 1};
+            std::system("which getprop > /dev/null 2>&1")  ? 
+                n - 1
+                : 0 };
         std::string wm = wm_vector[element];
         return wm;
     } else {

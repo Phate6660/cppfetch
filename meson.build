@@ -11,6 +11,7 @@ if mdep.found()
     conf_data.set('MUSIC', true)
     configure_file(output : 'config.h',
                configuration : conf_data)
+    configuration_inc = include_directories('.')
     libmpdclient_lib='mpdclient'
     libmpdclient_lib_dir='/usr/lib64'
     libmpdclient_header_dir='/usr/include/mpd'
@@ -32,8 +33,9 @@ if mdep.found()
                install : true)
 else
     conf_data.set('MUSIC', false)
-   configure_file(output : 'config.h',
+    configure_file(output : 'config.h',
                configuration : conf_data)
+    configuration_inc = include_directories('.')
     executable('cppfetch',
                'src/cpu.cpp',
                'src/distro.cpp',

@@ -1,5 +1,8 @@
 #include <iostream>
+#include "config.h"
+
 #pragma once
+
 std::string cpu();
 std::string de_wm();
 std::string distro();

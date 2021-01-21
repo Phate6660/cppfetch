@@ -18,6 +18,9 @@ void output() {
         "Editor:      " << editor() << std::endl <<
         "Environment: " << de_wm() << std::endl <<
         "Memory:      " << memory() << std::endl <<
+        #ifdef MUSIC
+        "Music:       " << music() << std::endl <<
+        #endif
         "Shell:       " << shell() << std::endl <<
         "Uptime:      " << uptime() << std::endl <<
         "User:        " << user() << std::endl;

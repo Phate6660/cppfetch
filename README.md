@@ -7,6 +7,11 @@ such programs in other languages.
 
 ## Building
 
+Dependencies:
+- Meson (reason: build system)
+- A generator such as make or ninja (I recommend ninja)
+- libmpdclient for music info (OPTIONAL)
+
 ```bash
 git clone https://github.com/Phate6660/cppfetch
 cd cppfetch
@@ -31,8 +36,9 @@ Distro:      Gentoo/Linux
 Editor:      /usr/bin/emacsclient
 Environment: herbstluftwm
 Memory:      16GB
+Music:       Sacred Reich - The American Way - Love... Hate
 Shell:       /bin/bash
-Uptime:      15d 14h 44m
+Uptime:      18d 14h 52m
 User:        valley
 ```
 
@@ -51,6 +57,7 @@ User:        valley
   + ~~Total~~
   + Used
 - Music Info
+  + ~~MPD~~
 - Package Count
 - ~~Shell Info~~
 - Terminal Info

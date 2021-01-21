@@ -26,8 +26,11 @@ std::string de_wm() {
     // Window Manager checking.
     val = std::getenv("HOME");
     std::string home = val;
-    std::string xinitrc = home.append("/.xinitrc");
-    std::ifstream file;
+    std::string xinitrc{ 
+        std::system("which getprop > /dev/null 2>&1") ? 
+            home.append("/.xinitrc")
+            : home.append("/.vnc/xstartup") };
+        std::ifstream file;
     // Thank you StackOverflow for lines 34-53.
     // It reads the last line of the file by by going to one character before EOF
     // and then reading backwards until it hits a newline character.
@@ -53,7 +56,11 @@ std::string de_wm() {
         getline(file, lastline);
         std::vector<std::string> wm_vector = explode(lastline, ' ');
         int n = wm_vector.size();
-        std::string wm = wm_vector[n - 1];
+        int element{ 
+            std::system("which getprop > /dev/null 2>&1")  ? 
+                n - 1
+                : 0 };
+        std::string wm = wm_vector[element];
         return wm;
     } else {
         return "N/A (could not open " + xinitrc + ")";

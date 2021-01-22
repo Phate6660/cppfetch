@@ -24,11 +24,9 @@ std::string packages() {
             // Nothing found.
             return "N/A (no support package managers found)";
         } else {
-            std::string message{ count("qlist -I", "Portage") };
-            return message;
+            return count("qlist -I", "Portage");
         }
     } else {
-        std::string message{ count("pkg -l", "Portage") };
-        return message;
+        return count("pkg -l", "Portage");
     }
 }

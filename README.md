@@ -35,10 +35,10 @@ CPU:         Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz
 Distro:      Gentoo/Linux
 Editor:      /usr/bin/emacsclient
 Environment: herbstluftwm
-Memory:      16GB
-Music:       Sacred Reich - The American Way - Love... Hate
+Memory:      15969MB
+Music:       Metallica - Re-Load - The Memory Remains
 Shell:       /bin/bash
-Uptime:      18d 14h 52m
+Uptime:      20d 3h 35m
 User:        valley
 ```
 

@@ -1,15 +1,28 @@
+#include <filesystem>
+#include <fstream>
 #include <iostream>
 #include "config.h"
 #include "main.hpp"
 
 void logo() {
-    std::cout <<
+    char * val = std::getenv("HOME");
+    std::string home = val;
+    std::string logo_file = home.append("/.config/cppfetch/logo");
+    std::filesystem::path f{ logo_file };
+    if (std::filesystem::exists(f)) {
+        std::ifstream ifs(logo_file);
+        std::string ret{ std::istreambuf_iterator<char>(ifs), std::istreambuf_iterator<char>() };
+        ifs.close(); // must close the inout stream so the file can be cleaned up
+        std::cout << ret;
+    } else {
+        std::cout <<
             " ██████╗██████╗ ██████╗ ███████╗███████╗████████╗ ██████╗██╗  ██╗" << std::endl << 
             "██╔════╝██╔══██╗██╔══██╗██╔════╝██╔════╝╚══██╔══╝██╔════╝██║  ██║" << std::endl <<
             "██║     ██████╔╝██████╔╝█████╗  █████╗     ██║   ██║     ███████║" << std::endl <<
             "██║     ██╔═══╝ ██╔═══╝ ██╔══╝  ██╔══╝     ██║   ██║     ██╔══██║" << std::endl <<
             "╚██████╗██║     ██║     ██║     ███████╗   ██║   ╚██████╗██║  ██║" << std::endl <<
             " ╚═════╝╚═╝     ╚═╝     ╚═╝     ╚══════╝   ╚═╝    ╚═════╝╚═╝  ╚═╝" << std::endl;
+    }
 }
 
 void output() {

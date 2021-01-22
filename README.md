@@ -44,10 +44,10 @@ User:        valley
 
 ## TODO
 
-- ASCII art (maybe? not sure yet)
+- ~~ASCII art~~
   + ~~Disabled by default, enable with `l` or `logo`~~
   + ~~Hardoded ascii art~~
-  + User supplied ascii art
+  + ~~User supplied ascii art~~ (place at `~/.config/cppfetch/logo`)
 - ~~CPU Info~~
 - ~~DE/WM Info~~
 - ~~Distro Info~~

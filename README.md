@@ -37,6 +37,7 @@ Editor:      /usr/bin/emacsclient
 Environment: herbstluftwm
 Memory:      15969MB
 Music:       Metallica - Re-Load - The Memory Remains
+Packages:    659 (Portage)
 Shell:       /bin/bash
 Uptime:      20d 3h 35m
 User:        valley
@@ -59,6 +60,16 @@ User:        valley
 - Music Info
   + ~~MPD~~
 - Package Count
+  + apt
+  + dnf
+  + dpkg
+  + pacman
+  + ~~[pkg](https://github.com/Phate6660/pkg)~~
+  + [ppkg](https://github.com/Phate6660/ppkg)
+  + ~~qlist~~ (TODO: get package counts in pure C++)
+  + rpm
+  + xbps
+  + yum
 - ~~Shell Info~~
 - Terminal Info
 - ~~Uptime Info~~

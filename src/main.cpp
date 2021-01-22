@@ -35,6 +35,7 @@ void output() {
         #ifdef MUSIC
         "Music:       " << music() << std::endl <<
         #endif
+        "Packages:    " << packages() << std::endl <<
         "Shell:       " << shell() << std::endl <<
         "Uptime:      " << uptime() << std::endl <<
         "User:        " << user() << std::endl;

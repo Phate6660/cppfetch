@@ -26,6 +26,7 @@ if mdep.found()
                'src/main.cpp',
                'src/memory.cpp',
                'src/music.cpp',
+               'src/packages.cpp',
                'src/uptime.cpp',
                build_rpath : libmpdclient_lib_dir,
                install_rpath : libmpdclient_lib_dir,
@@ -43,6 +44,7 @@ else
                'src/functions.cpp',
                'src/main.cpp',
                'src/memory.cpp',
+               'src/packages.cpp',
                'src/uptime.cpp',
                install : true)
 endif

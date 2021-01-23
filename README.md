@@ -60,15 +60,19 @@ User:        valley
 - Music Info
   + ~~MPD~~
 - Package Count
-  + apt
-  + dnf
-  + dpkg
-  + pacman
+  + ~~apt~~
+  + cargo
+  + ~~dnf~~
+  + ~~dpkg~~
+  + ~~eopkg~~
+  + flatpak
+  + ~~pacman~~
+  + pip
   + ~~[pkg](https://github.com/Phate6660/pkg)~~
   + [ppkg](https://github.com/Phate6660/ppkg)
   + ~~qlist~~ (TODO: get package counts in pure C++)
-  + rpm
-  + xbps
+  + ~~rpm~~
+  + ~~xbps~~
   + yum
 - ~~Shell Info~~
 - Terminal Info

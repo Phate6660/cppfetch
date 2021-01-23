@@ -9,6 +9,8 @@ void logo() {
     std::string home = val;
     std::string logo_file = home.append("/.config/cppfetch/logo");
     std::filesystem::path f{ logo_file };
+    // Automatically use custom ascii art if the file exists,
+    // otherwise use the default hardcoded logo.
     if (std::filesystem::exists(f)) {
         std::ifstream ifs(logo_file);
         std::string ret{ std::istreambuf_iterator<char>(ifs), std::istreambuf_iterator<char>() };

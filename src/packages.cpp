@@ -1,10 +1,11 @@
 #include <fstream>
 #include <iostream>
+#include "packages.hpp"
 
 /// Run the command and count the lines of output, 
 /// optionally subtract from the count to account for extra lines,
 /// then assemble and return the message as a string.
-std::string count(std::string cmd, std::string manager, int remove = 0) {
+static std::string count(std::string cmd, std::string manager, int remove = 0) {
     const std::string& command = cmd + "| wc -l";
     std::system((command + " > temp.txt").c_str());
  
@@ -21,56 +22,55 @@ std::string count(std::string cmd, std::string manager, int remove = 0) {
     return message;
 }
 
-std::string packages() {
-    // pkg -- emerge frontend written in Rust.
-    if (std::system("which pkg > /dev/null 2>&1")) {
-        // qlist -- list package info for Portage.
-        if (std::system("which qlist > /dev/null 2>&1")) {
-            // apk -- package manager for Alpine Linux.
-            if (std::system("which apk > /dev/null 2>&1")) {
-                // apt -- package manager for Debian/Ubuntu-based distros.
-                if (std::system("which apt > /dev/null 2>&1")) {
-                    // dnf -- package manager for Red Hat distros.
-                    if (std::system("which dnf > /dev/null 2>&1")) {
-                        // dpkg -- same as apt.
-                        if (std::system("which dpkg-query > /dev/null 2>&1")) {
-                            // eopkg -- Solus package manager.
-                            if (std::system("which eopkg > /dev/null 2>&1")) {
-                                // pacman -- Arch package manager.
-                                if (std::system("which pacman > /dev/null 2>&1")) {
-                                    // rpm -- like dnf.
-                                    if (std::system("which rpm > /dev/null 2>&1")) {
-                                        // xbps -- Void Linux's package manager.
-                                        if (std::system("which xbps-query > /dev/null 2>&1")) {
-                                            return "N/A (no support package managers found)";
-                                        } else {
-                                            return count("xbps-query -l", "xbps");
-                                        }
-                                    } else {
-                                        return count("rpm -qa", "rpm");
-                                    }
-                                } else {
-                                    return count("pacman -Qq", "pacman");
-                                }
-                            } else {
-                                return count("eopkg list-installed", "eopkg");
-                            }
-                        } else {
-                            return count("dpkg-query -f '${binary:Package}\n' -W", "dpkg");
-                        }
-                    } else {
-                        return count("dnf list installed", "dnf");
-                    }
-                } else {
-                    return count("apt list --installed", "apt", 1);
-                }
-            } else {
-                return count("apk info", "apk");
-            }
-        } else {
-            return count("qlist -I", "Portage");
-        }
+static PackageManager findPackageManager() {
+    if (std::system("which pkg > /dev/null 2>&1") == 0) {
+        return PKG;
+    } else if (std::system("which qlist > /dev/null 2>&1") == 0) {
+        return QLIST;
+    } else if (std::system("which apk > /dev/null 2>&1") == 0) {
+        return APK;
+    } else if (std::system("which apt > /dev/null 2>&1") == 0) {
+        return APT;
+    } else if (std::system("which dnf > /dev/null 2>&1") == 0) {
+        return DNF;
+    } else if (std::system("which dpkg-query > /dev/null 2>&1") == 0) {
+        return DPKG;
+    } else if (std::system("which eopkg > /dev/null 2>&1") == 0) {
+        return EOPKG;
+    } else if (std::system("which pacman > /dev/null 2>&1") == 0) {
+        return PACMAN;
+    } else if (std::system("which rpm > /dev/null 2>&1") == 0) {
+        return RPM;
+    } else if (std::system("which xbps-query > /dev/null 2>&1") == 0) {
+        return XBPS;
     } else {
-        return count("pkg -l", "Portage");
+        return UNKNOWN;
+	}
+
+}
+
+std::string packages() {
+    switch (findPackageManager()) {
+        case PKG:
+            return count("pkg -l", "Portage");
+        case QLIST:
+            return count("qlist -I", "Portage");
+        case APK:
+            return count("apk info", "apk");
+        case APT:
+            return count("apt list --installed", "apt", 1);
+        case DNF:
+            return count("dnf list installed", "dnf");
+        case DPKG:
+            return count("dpkg-query -f '${binary:Package}\n' -W", "dpkg");
+        case EOPKG:
+            return count("eopkg list-installed", "eopkg");
+        case PACMAN:
+            return count("pacman -Qq", "pacman");
+        case RPM:
+            return count("rpm -qa", "rpm");
+        case XBPS:
+            return count("xbps-query -l", "xbps");
+        default: return "N/A (no supported pacakge managers found)";
     }
 }

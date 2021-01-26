@@ -45,7 +45,7 @@ static PackageManager findPackageManager() {
         return XBPS;
     } else {
         return UNKNOWN;
-	}
+    }
 
 }
 

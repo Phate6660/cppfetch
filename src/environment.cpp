@@ -42,7 +42,7 @@ std::string de_wm() {
             // Start searching for \n occurrences.
             file.seekg(-1, std::ios_base::cur);
             int i = file.tellg();
-            for(i;i > 0; i--) {
+            for(;i > 0; i--) {
                 if(file.peek() == '\n') {
                     //Found
                     file.get();

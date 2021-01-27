@@ -7,10 +7,8 @@ std::string music() {
     conn = mpd_connection_new("localhost", 6600, 1000);
 
     if (mpd_connection_get_error(conn) != MPD_ERROR_SUCCESS) {
-        fprintf(stderr, "Could not connect to mpd: %s\n", mpd_connection_get_error_message(conn));
-
-        mpd_connection_free(conn);
-        return NULL;
+    mpd_connection_free(conn);
+    return "N/A (could not connect to MPD)";
     }
     struct mpd_song *song;
     song = mpd_run_current_song(conn);

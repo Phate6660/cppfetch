@@ -32,5 +32,7 @@ std::string uptime() {
     } else if (uptime > 60) {
         int minutes = (uptime / 60) % 60;
         return std::to_string(minutes) + "m";
+    } else {
+	return "<1m";
     }
 }

@@ -44,7 +44,7 @@ void output(int skip = 0) {
 }
 
 void output_main() {
-    if (packages().find("openjdk") != std::string::npos) {
+    if (packages().find("*") != std::string::npos) {
         output(1);
     } else {
         output();
@@ -63,10 +63,10 @@ int main(int argc, char** argv) {
         }
         if (arg == "l" || arg == "logo") {
             logo();
-            output();
+            output_main();
         }
     } else {
-        output();
+        output_main();
         return 0;
     }
 }

@@ -22,55 +22,110 @@ static std::string count(std::string cmd, std::string manager, int remove = 0) {
     return message;
 }
 
-static PackageManager findPackageManager() {
-    if (std::system("which pkg > /dev/null 2>&1") == 0) {
-        return PKG;
-    } else if (std::system("which qlist > /dev/null 2>&1") == 0) {
-        return QLIST;
-    } else if (std::system("which apk > /dev/null 2>&1") == 0) {
-        return APK;
-    } else if (std::system("which apt > /dev/null 2>&1") == 0) {
-        return APT;
-    } else if (std::system("which dnf > /dev/null 2>&1") == 0) {
-        return DNF;
-    } else if (std::system("which dpkg-query > /dev/null 2>&1") == 0) {
-        return DPKG;
-    } else if (std::system("which eopkg > /dev/null 2>&1") == 0) {
-        return EOPKG;
-    } else if (std::system("which pacman > /dev/null 2>&1") == 0) {
-        return PACMAN;
-    } else if (std::system("which rpm > /dev/null 2>&1") == 0) {
-        return RPM;
-    } else if (std::system("which xbps-query > /dev/null 2>&1") == 0) {
-        return XBPS;
+static PackageManager findPackageManager(int skip = 0) {
+    if (skip == 1) {
+        if (std::system("which apk > /dev/null 2>&1") == 0) {
+            return APK;
+        } else if (std::system("which dnf > /dev/null 2>&1") == 0) {
+            return DNF;
+        } else if (std::system("which dpkg-query > /dev/null 2>&1") == 0) {
+            return DPKG;
+        } else if (std::system("which eopkg > /dev/null 2>&1") == 0) {
+            return EOPKG;
+        } else if (std::system("which pacman > /dev/null 2>&1") == 0) {
+            return PACMAN;
+        } else if (std::system("which pip > /dev/null 2>&1") == 0) {
+            return PIP;
+        } else if (std::system("which pkg > /dev/null 2>&1") == 0) {
+            return PKG;
+        } else if (std::system("which qlist > /dev/null 2>&1") == 0) {
+            return QLIST;
+        } else if (std::system("which rpm > /dev/null 2>&1") == 0) {
+            return RPM;
+        } else if (std::system("which xbps-query > /dev/null 2>&1") == 0) {
+            return XBPS;
+        } else {
+            return UNKNOWN;
+        }
     } else {
-        return UNKNOWN;
+        if (std::system("which apk > /dev/null 2>&1") == 0) {
+            return APK;
+        } else if (std::system("which apt > /dev/null 2>&1") == 0) {
+            return APT;
+        } else if (std::system("which dnf > /dev/null 2>&1") == 0) {
+            return DNF;
+        } else if (std::system("which dpkg-query > /dev/null 2>&1") == 0) {
+            return DPKG;
+        } else if (std::system("which eopkg > /dev/null 2>&1") == 0) {
+            return EOPKG;
+        } else if (std::system("which pacman > /dev/null 2>&1") == 0) {
+            return PACMAN;
+        } else if (std::system("which pip > /dev/null 2>&1") == 0) {
+            return PIP;
+        } else if (std::system("which pkg > /dev/null 2>&1") == 0) {
+            return PKG;
+        } else if (std::system("which qlist > /dev/null 2>&1") == 0) {
+            return QLIST;
+        } else if (std::system("which rpm > /dev/null 2>&1") == 0) {
+            return RPM;
+        } else if (std::system("which xbps-query > /dev/null 2>&1") == 0) {
+            return XBPS;
+        } else {
+            return UNKNOWN;
+        }
     }
-
 }
 
-std::string packages() {
-    switch (findPackageManager()) {
-        case PKG:
-            return count("pkg -l", "Portage");
-        case QLIST:
-            return count("qlist -I", "Portage");
-        case APK:
-            return count("apk info", "apk");
-        case APT:
-            return count("apt list --installed", "apt", 1);
-        case DNF:
-            return count("dnf list installed", "dnf");
-        case DPKG:
-            return count("dpkg-query -f '${binary:Package}\n' -W", "dpkg");
-        case EOPKG:
-            return count("eopkg list-installed", "eopkg");
-        case PACMAN:
-            return count("pacman -Qq", "pacman");
-        case RPM:
-            return count("rpm -qa", "rpm");
-        case XBPS:
-            return count("xbps-query -l", "xbps");
-        default: return "N/A (no supported pacakge managers found)";
+std::string packages(int skip = 0) {
+    if (skip == 1) {
+        switch (findPackageManager(1)) {
+            case APK:
+                return count("apk info", "apk");
+            case DNF:
+                return count("dnf list installed", "dnf");
+            case DPKG:
+                return count("dpkg-query -f '${binary:Package}\n' -W", "dpkg");
+            case EOPKG:
+                return count("eopkg list-installed", "eopkg");
+            case PACMAN:
+                return count("pacman -Qq", "pacman");
+            case PIP:
+                return count("pip list", "pip", 2);
+            case PKG:
+                return count("pkg -l", "Portage");
+            case QLIST:
+                return count("qlist -I", "Portage");
+            case RPM:
+                return count("rpm -qa", "rpm");
+            case XBPS:
+                return count("xbps-query -l", "xbps");
+            default: return "N/A (no supported pacakge managers found)";
+        }
+    } else {
+        switch (findPackageManager()) {
+            case APK:
+                return count("apk info", "apk");
+            case APT:
+                return count("apt list --installed", "apt", 1);
+            case DNF:
+                return count("dnf list installed", "dnf");
+            case DPKG:
+                return count("dpkg-query -f '${binary:Package}\n' -W", "dpkg");
+            case EOPKG:
+                return count("eopkg list-installed", "eopkg");
+            case PACMAN:
+                return count("pacman -Qq", "pacman");
+            case PIP:
+                return count("pip list", "pip", 2);
+            case PKG:
+                return count("pkg -l", "Portage");
+            case QLIST:
+                return count("qlist -I", "Portage");
+            case RPM:
+                return count("rpm -qa", "rpm");
+            case XBPS:
+                return count("xbps-query -l", "xbps");
+            default: return "N/A (no supported pacakge managers found)";
+        }
     }
 }

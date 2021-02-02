@@ -9,6 +9,7 @@ enum PackageManager {
     DPKG,   // dpkg -- same as apt.
     EOPKG,  // eopkg -- Solus package manager.
     PACMAN, // pacman -- Arch package manager.
+    PIP,    // pip -- Python's package manager.
     RPM,    // rpm -- like dnf.
     XBPS,   // xbps -- Void Linux's package manager.
 };

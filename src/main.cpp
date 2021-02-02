@@ -44,7 +44,7 @@ void output(int skip = 0) {
 }
 
 void output_main() {
-    if (packages().find("*") != std::string::npos) {
+    if (packages().find("openjdk") != std::string::npos) {
         output(1);
     } else {
         output();

@@ -22,24 +22,18 @@ ninja -C build/ # Or whatever generator you have set for `meson`
 
 ## Example output
 
-`$ ./build/cppfetch l`
+`$ ./build/cppfetch`
 
 ```
- ██████╗██████╗ ██████╗ ███████╗███████╗████████╗ ██████╗██╗  ██╗
-██╔════╝██╔══██╗██╔══██╗██╔════╝██╔════╝╚══██╔══╝██╔════╝██║  ██║
-██║     ██████╔╝██████╔╝█████╗  █████╗     ██║   ██║     ███████║
-██║     ██╔═══╝ ██╔═══╝ ██╔══╝  ██╔══╝     ██║   ██║     ██╔══██║
-╚██████╗██║     ██║     ██║     ███████╗   ██║   ╚██████╗██║  ██║
- ╚═════╝╚═╝     ╚═╝     ╚═╝     ╚══════╝   ╚═╝    ╚═════╝╚═╝  ╚═╝
 CPU:         Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz
 Distro:      Gentoo/Linux
 Editor:      /usr/bin/emacsclient
 Environment: herbstluftwm
 Memory:      15969MB
-Music:       Metallica - Re-Load - The Memory Remains
-Packages:    659 (Portage)
+Music:       Electric Six - I Shall Exterminate Everything Around Me That Restricts Me From Being The Master - Dance Pattern
+Packages:    659 (Portage), 16 (pip)
 Shell:       /bin/bash
-Uptime:      20d 3h 35m
+Uptime:      5d 11h 5m
 User:        valley
 ```
 

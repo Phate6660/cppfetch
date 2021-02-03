@@ -1,6 +1,15 @@
+addons:
+  apt:
+    packages:
+      - python3
+      - python3-pip
+      - python3-setuptools
+      - python3-wheel
+      - ninja-build=1.7.1-1~ubuntu16.04.1
+      - gcc-10
+    sources:
+      - sourceline: 'ppa:ubuntu-toolchain-r/test'
 before_install:
-  - sudo apt-get update
-  - sudo apt-get install python3 python3-pip python3-setuptools python3-wheel ninja-build=1.7.1-1~ubuntu16.04.1 -V
   - pip3 install --user meson
 compiler:
   - clang

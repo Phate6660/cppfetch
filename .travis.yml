@@ -6,7 +6,7 @@ addons:
       - python3-setuptools
       - python3-wheel
       - ninja-build=1.7.1-1~ubuntu16.04.1
-      - g++-10
+      - gcc-9
     sources:
       - sourceline: 'ppa:ubuntu-toolchain-r/test'
 before_install:

@@ -23,3 +23,7 @@
 [._]s[a-rt-v][a-z]
 [._]ss[a-gi-z]
 [._]sw[a-p]
+
+# Whitelist Travis CI files
+!.travis.yml
+!.travis_build.sh

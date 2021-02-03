@@ -22,11 +22,9 @@ static std::string count(std::string cmd, std::string manager, int remove = 0) {
     return message;
 }
 
-static PackageManager findPackageManager() {
+static PackageManager findDistroPackageManager() {
     if (std::system("which apk > /dev/null 2>&1") == 0) {
         return APK;
-    } else if (std::system("which apt > /dev/null 2>&1") == 0) {
-        return APT;
     } else if (std::system("which dnf > /dev/null 2>&1") == 0) {
         return DNF;
     } else if (std::system("which dpkg-query > /dev/null 2>&1") == 0) {
@@ -35,8 +33,6 @@ static PackageManager findPackageManager() {
         return EOPKG;
     } else if (std::system("which pacman > /dev/null 2>&1") == 0) {
         return PACMAN;
-    } else if (std::system("which pip > /dev/null 2>&1") == 0) {
-        return PIP;
     } else if (std::system("which pkg > /dev/null 2>&1") == 0) {
         return PKG;
     } else if (std::system("which qlist > /dev/null 2>&1") == 0) {
@@ -50,15 +46,19 @@ static PackageManager findPackageManager() {
     }
 }
 
-std::string packages() {
-    switch (findPackageManager()) {
+static PackageManager findLanguagePackageManager() {
+    if (std::system("which pip > /dev/null 2>&1") == 0) {
+        return PIP;
+    } else {
+        return UNKNOWN;
+    }
+}
+
+// Package managers for distros.
+std::string distroPackages() {
+    switch (findDistroPackageManager()) {
         case APK:
             return count("apk info", "apk");
-        case APT:
-            if (WEXITSTATUS(std::system("apt >  /dev/null 2>&1")) == 1) {
-                return "N/A (you have another program called apt installed which isn't the package manager)";
-            }
-            return count("apt list --installed", "apt", 1);
         case DNF:
             return count("dnf list installed", "dnf");
         case DPKG:
@@ -67,8 +67,6 @@ std::string packages() {
             return count("eopkg list-installed", "eopkg");
         case PACMAN:
             return count("pacman -Qq", "pacman");
-        case PIP:
-            return count("pip list", "pip", 2);
         case PKG:
             return count("pkg -l", "Portage");
         case QLIST:
@@ -78,5 +76,14 @@ std::string packages() {
         case XBPS:
             return count("xbps-query -l", "xbps");
         default: return "N/A (no supported pacakge managers found)";
+    }
+}
+
+// Package managers for programming languages.
+std::string languagePackages() {
+    switch (findLanguagePackageManager()) {
+        case PIP:
+            return count("pip list", "pip", 2);
+        default: return "";
     }
 }

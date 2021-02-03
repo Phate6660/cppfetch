@@ -28,6 +28,9 @@ void logo() {
 }
 
 void output() {
+    std::string packageMessage{ languagePackages() == "" ?
+        distroPackages() :
+        distroPackages() + ", " + languagePackages() };
     std::cout <<
         "CPU:         " << cpu() << std::endl <<
         "Distro:      " << distro() << std::endl <<
@@ -37,7 +40,7 @@ void output() {
         #ifdef MUSIC
         "Music:       " << music() << std::endl <<
         #endif
-        "Packages:    " << packages() << std::endl <<
+        "Packages:    " << packageMessage << std::endl <<
         "Shell:       " << shell() << std::endl <<
         "Uptime:      " << uptime() << std::endl <<
         "User:        " << user() << std::endl;

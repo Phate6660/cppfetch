@@ -10,11 +10,11 @@ addons:
     sources:
       - sourceline: 'ppa:ubuntu-toolchain-r/test'
 before_install:
+  - eval "${COMPILER}"
   - pip3 install --user meson
 compiler:
   - gcc
 env:
-  - CC="gcc-9"
-  - CXX="g++-9"
+  - COMPILER="CC=gcc-9 CXX=g++-9"
 language: cpp
 script: ./.travis_build.sh

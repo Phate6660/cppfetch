@@ -27,7 +27,7 @@ void logo() {
     }
 }
 
-void output(int skip = 0) {
+void output() {
     std::cout <<
         "CPU:         " << cpu() << std::endl <<
         "Distro:      " << distro() << std::endl <<
@@ -37,18 +37,10 @@ void output(int skip = 0) {
         #ifdef MUSIC
         "Music:       " << music() << std::endl <<
         #endif
-        "Packages:    " << packages(skip) << std::endl <<
+        "Packages:    " << packages() << std::endl <<
         "Shell:       " << shell() << std::endl <<
         "Uptime:      " << uptime() << std::endl <<
         "User:        " << user() << std::endl;
-}
-
-void output_main() {
-    if (packages().find("openjdk") != std::string::npos) {
-        output(1);
-    } else {
-        output();
-    }
 }
 
 int main(int argc, char** argv) {
@@ -63,10 +55,10 @@ int main(int argc, char** argv) {
         }
         if (arg == "l" || arg == "logo") {
             logo();
-            output_main();
+            output();
         }
     } else {
-        output_main();
+        output();
         return 0;
     }
 }

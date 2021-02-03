@@ -11,7 +11,7 @@ std::string memory();
 #ifdef MUSIC
 std::string music();
 #endif
-std::string packages(int skip = 0);
+std::string packages();
 std::string shell();
 std::string uptime();
 std::string user();

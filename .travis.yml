@@ -6,4 +6,4 @@ compiler:
   - clang
   - gcc
 language: cpp
-script: .travis_build.sh
+script: ./.travis_build.sh

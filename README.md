@@ -29,11 +29,12 @@ CPU:         Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz
 Distro:      Gentoo/Linux
 Editor:      /usr/bin/emacsclient
 Environment: herbstluftwm
-Memory:      15969MB
-Music:       Electric Six - I Shall Exterminate Everything Around Me That Restricts Me From Being The Master - Dance Pattern
-Packages:    659 (Portage), 16 (pip)
+Memory:      15966MB
+Music:       Pantera - Vulgar Display of Power - Regular People (Conceit)
+Packages:    715 (Portage), 16 (pip)
 Shell:       /bin/bash
-Uptime:      5d 11h 5m
+Terminal:    xterm
+Uptime:      7d 0h 17m
 User:        valley
 ```
 
@@ -69,6 +70,6 @@ User:        valley
   + ~~xbps~~
   + yum
 - ~~Shell Info~~
-- Terminal Info
+- ~~Terminal Info~~
 - ~~Uptime Info~~
 - ~~User Info~~

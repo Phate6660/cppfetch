@@ -27,6 +27,7 @@ if mdep.found()
                'src/memory.cpp',
                'src/music.cpp',
                'src/packages.cpp',
+               'src/term.cpp',
                'src/uptime.cpp',
                build_rpath : libmpdclient_lib_dir,
                install_rpath : libmpdclient_lib_dir,

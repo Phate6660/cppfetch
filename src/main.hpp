@@ -14,5 +14,6 @@ std::string memory();
 std::string music();
 #endif
 std::string shell();
+std::string terminal();
 std::string uptime();
 std::string user();

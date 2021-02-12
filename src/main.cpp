@@ -42,6 +42,7 @@ void output() {
         #endif
         "Packages:    " << packageMessage << std::endl <<
         "Shell:       " << shell() << std::endl <<
+        "Terminal:    " << terminal() << std::endl <<
         "Uptime:      " << uptime() << std::endl <<
         "User:        " << user() << std::endl;
 }

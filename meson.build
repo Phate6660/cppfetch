@@ -46,6 +46,7 @@ else
                'src/main.cpp',
                'src/memory.cpp',
                'src/packages.cpp',
+               'src/term.cpp',
                'src/uptime.cpp',
                install : true)
 endif

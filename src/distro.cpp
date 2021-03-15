@@ -1,6 +1,17 @@
 #include <algorithm>
+#include <filesystem>
 #include <fstream>
 #include "functions.hpp"
+
+std::string extract(std::string file) {
+    std::string distro;
+    std::string line_pre_array = parse("PRETTY_NAME", file);
+    std::vector<std::string> result = explode(line_pre_array, '=');
+    distro = result[1]; // Second element.
+    // Trim `"` from the string.
+    distro.erase(std::remove(distro.begin(), distro.end(), '\"'), distro.end());
+    return distro;
+}
 
 // Parse `/etc/os-release` for the PRETTY_NAME string
 // and extract the value of the variable.
@@ -10,13 +21,18 @@ std::string distro() {
     // Check if running Android.
     if (std::system("which getprop > /dev/null 2>&1")) {
         // No getprop command, resume as normal.
-        std::string distro;
-        std::string line_pre_array = parse("PRETTY_NAME", "/etc/os-release");
-        std::vector<std::string> result = explode(line_pre_array, '=');
-        distro = result[1]; // Second element.
-        // Trim `"` from the string.
-        distro.erase(std::remove(distro.begin(), distro.end(), '\"'), distro.end());
-        return distro;
+        std::filesystem::path bedrock_file = "/bedrock/etc/os-release";
+        std::filesystem::path normal_file = "/etc/os-release";
+        std::filesystem::path weird_file = "/var/lib/os-release";
+        if (std::filesystem::exists(bedrock_file)) {
+            return extract("/bedrock/etc/os-release");
+        } else if (std::filesystem::exists(normal_file)) {
+            return extract("/etc/os-release");
+        } else if (std::filesystem::exists(weird_file)) {
+            return extract("/var/lib/os-release");
+        } else {
+            return "N/A (could not read '/bedrock/etc/os-release', '/etc/os-release', nor '/var/lib/os-release')";
+        }
     } else {
         // getprop command found, return Android version.
         const std::string& command = "getprop ro.build.version.release";

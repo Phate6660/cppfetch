@@ -1,7 +1,7 @@
 #include <algorithm>
 #include <filesystem>
 #include <fstream>
-#include "functions.hpp"
+#include "../helpers/functions.hpp"
 
 std::string extract(std::string file) {
     std::string distro;

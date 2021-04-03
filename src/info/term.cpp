@@ -1,7 +1,7 @@
 #include <fstream>
 #include <stdio.h>
 #include <unistd.h>
-#include "functions.hpp"
+#include "../helpers/functions.hpp"
 
 /* 
  * Credits to https://www.techiedelight.com/trim-string-cpp-remove-leading-trailing-spaces/

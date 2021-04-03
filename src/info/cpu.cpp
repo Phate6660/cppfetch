@@ -1,5 +1,5 @@
 #include <regex>
-#include "functions.hpp"
+#include "../helpers/functions.hpp"
 
 std::string cpu() {
     std::string cpu;

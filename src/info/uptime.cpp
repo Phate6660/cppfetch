@@ -1,6 +1,6 @@
 #include <fstream>
 #include <vector>
-#include "functions.hpp"
+#include "../helpers/functions.hpp"
 
 std::string uptime() {
     std::ifstream uptime_file("/proc/uptime"); // Open the file for reading.

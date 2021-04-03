@@ -1,7 +1,7 @@
 #include <fstream>
 #include <iostream>
 #include <vector>
-#include "functions.hpp"
+#include "../helpers/functions.hpp"
 
 std::string de_wm() {
     char * val;

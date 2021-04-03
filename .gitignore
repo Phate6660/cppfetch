@@ -9,6 +9,7 @@
 !README.md
 !src/
 !src/*
+!src/*/*
 
 # Any Emacs-related files, placed at the end to
 # overwite the whitelist rules above.

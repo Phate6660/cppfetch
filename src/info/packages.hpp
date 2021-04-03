@@ -1,4 +1,3 @@
-
 enum PackageManager {
     UNKNOWN,
     APK,    // apk -- package manager for Alpine Linux.
@@ -12,4 +11,3 @@ enum PackageManager {
     RPM,    // rpm -- like dnf.
     XBPS,   // xbps -- Void Linux's package manager.
 };
-

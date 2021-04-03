@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "functions.hpp"
+#include "../helpers/functions.hpp"
 
 std::string memory() {
     std::string total_line = parse("MemTotal", "/proc/meminfo");

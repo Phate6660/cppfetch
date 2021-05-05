@@ -27,9 +27,6 @@ void logo() {
 }
 
 void output() {
-    std::string packageMessage{ languagePackages() == "" ?
-        distroPackages() :
-        distroPackages() + ", " + languagePackages() };
     std::cout <<
         "CPU:         " << cpu() << std::endl <<
         "Distro:      " << distro() << std::endl <<
@@ -39,7 +36,7 @@ void output() {
         #ifdef MUSIC
         "Music:       " << music() << std::endl <<
         #endif
-        "Packages:    " << packageMessage << std::endl <<
+        "Packages:    " << packages() << std::endl <<
         "Shell:       " << shell() << std::endl <<
         "Terminal:    " << terminal() << std::endl <<
         "Uptime:      " << uptime() << std::endl <<
@@ -49,6 +46,7 @@ void output() {
 int main(int argc, char** argv) {
     if (argc > 1) {
         std::string arg = argv[1];
+
         // Print help if `h` or `help` is passed.
         if (arg == "h" || arg == "help") {
             std::cout <<

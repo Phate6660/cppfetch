@@ -22,7 +22,7 @@ static std::string count(std::string cmd, std::string manager, int remove = 0) {
     return message;
 }
 
-static PackageManager findDistroPackageManager() {
+static PackageManager findPackageManager() {
     if (std::system("which apk > /dev/null 2>&1") == 0) {
         return APK;
     } else if (std::system("which dnf > /dev/null 2>&1") == 0) {
@@ -46,17 +46,9 @@ static PackageManager findDistroPackageManager() {
     }
 }
 
-static PackageManager findLanguagePackageManager() {
-    if (std::system("which pip > /dev/null 2>&1") == 0) {
-        return PIP;
-    } else {
-        return UNKNOWN;
-    }
-}
-
-// Package managers for distros.
-std::string distroPackages() {
-    switch (findDistroPackageManager()) {
+// Return package counts.
+std::string packages() {
+    switch (findPackageManager()) {
         case APK:
             return count("apk info", "apk");
         case DNF:
@@ -79,11 +71,3 @@ std::string distroPackages() {
     }
 }
 
-// Package managers for programming languages.
-std::string languagePackages() {
-    switch (findLanguagePackageManager()) {
-        case PIP:
-            return count("pip list", "pip", 2);
-        default: return "";
-    }
-}

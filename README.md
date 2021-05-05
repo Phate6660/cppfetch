@@ -17,6 +17,9 @@ cd cppfetch
 xmake # or `xmake f --music=y && xmake` if you want to enable music info
 ```
 
+(Use `xmake b -r` after the `&&` to have xmake rebuild everything.<br>
+It's only needed if you previously built cppfetch with/without music and want the opposite.)
+
 ## Example output
 
 `$ ./build/linux/ARCH/cppfetch`

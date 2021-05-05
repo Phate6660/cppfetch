@@ -8,21 +8,20 @@ such programs in other languages.
 ## Building
 
 Dependencies:
-- Meson (reason: build system)
-- A generator such as make or ninja (I recommend ninja)
+- xmake
 - libmpdclient for music info (OPTIONAL)
 
 ```bash
 git clone https://github.com/Phate6660/cppfetch
 cd cppfetch
-meson build
-ninja -C build/ # Or whatever generator you have set for `meson`
-                # `make` is the default but I personally really like `ninja`
+xmake # or `xmake f --music=y && xmake` if you want to enable music info
 ```
 
 ## Example output
 
-`$ ./build/cppfetch`
+`$ ./build/linux/ARCH/cppfetch`
+
+(Replace ARCH with your architecture, e.g. x86\_64.)
 
 ```
 CPU:         Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz

@@ -1,7 +1,6 @@
 #include <filesystem>
 #include <fstream>
 #include <iostream>
-#include "config.h"
 #include "main.hpp"
 
 void logo() {

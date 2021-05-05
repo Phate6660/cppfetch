@@ -5,11 +5,11 @@
 # and all files in the source dir.
 !.gitignore
 !LICENSE
-!meson.build
 !README.md
 !src/
 !src/*
 !src/*/*
+!xmake.lua
 
 # Any Emacs-related files, placed at the end to
 # overwite the whitelist rules above.
@@ -24,7 +24,3 @@
 [._]s[a-rt-v][a-z]
 [._]ss[a-gi-z]
 [._]sw[a-p]
-
-# Whitelist Travis CI files
-!.travis.yml
-!.travis_build.sh

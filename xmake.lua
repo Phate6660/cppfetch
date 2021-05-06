@@ -9,12 +9,11 @@ option("music")
 option_end()
 
 if has_config("music") then
-    add_requires("libmpdclient")
+    add_requires("libmpdclient", {system = false})
 end
 
 target("cppfetch")
     set_kind("binary")
-    add_ldflags("-lmpdclient")
     set_options("music")
     add_files("src/main.cpp")
     add_files("src/helpers/functions.cpp")
@@ -24,6 +23,7 @@ target("cppfetch")
     add_files("src/info/memory.cpp")
     if has_config("music") then
         add_packages("libmpdclient")
+        add_links("mpdclient")
         add_files("src/info/music.cpp")
     end
     add_files("src/info/packages.cpp")

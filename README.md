@@ -12,9 +12,9 @@ Dependencies:
 - libmpdclient\*
 
 \*(Should automatically be installed/compiled with xmake when the music option is enabled.<br>
-However if you find it doesn't install, open an issue with the message with the output of xmake without `-q`<br>
-and then try installing libmpdclient from a package manager (though I'm usually really responsive so I'll probably<br>
-have it fixed up for you before you have to.)
+However if you find it doesn't install, open an issue with the message with the<br>
+output of xmake without `-q` and then try installing libmpdclient from a package manager<br>
+(though I'm usually really responsive so I'll probably have it fixed up for you before you have to).)
 
 ```bash
 git clone https://github.com/Phate6660/cppfetch

@@ -6,6 +6,11 @@ option("music")
     set_description("Enable music info, require libmpdclient.")
     set_showmenu(true)
     add_defines("MUSIC")
+option_end()
+
+if has_config("music") then
+    add_requires("libmpdclient")
+end
 
 target("cppfetch")
     set_kind("binary")
@@ -19,7 +24,6 @@ target("cppfetch")
     add_files("src/info/memory.cpp")
     if has_config("music") then
         add_files("src/info/music.cpp")
-        add_packages("libmpdclient")
     end
     add_files("src/info/packages.cpp")
     add_files("src/info/term.cpp")

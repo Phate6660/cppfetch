@@ -23,6 +23,7 @@ target("cppfetch")
     add_files("src/info/environment.cpp")
     add_files("src/info/memory.cpp")
     if has_config("music") then
+        add_packages("libmpdclient")
         add_files("src/info/music.cpp")
     end
     add_files("src/info/packages.cpp")

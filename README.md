@@ -9,15 +9,20 @@ such programs in other languages.
 
 Dependencies:
 - xmake
-- libmpdclient for music info (OPTIONAL)
+- libmpdclient\*
+
+\*(Should automatically be installed/compiled with xmake when the music option is enabled.<br>
+However if you find it doesn't install, open an issue with the message with the output of xmake without `-q`<br>
+and then try installing libmpdclient from a package manager (though I'm usually really responsive so I'll probably<br>
+have it fixed up for you before you have to.)
 
 ```bash
 git clone https://github.com/Phate6660/cppfetch
 cd cppfetch
-xmake # or `xmake f --music=y && xmake` if you want to enable music info
+xmake # or `xmake f --music=y && xmake -q` if you want to enable music info
 ```
 
-(Use `xmake b -r` after the `&&` to have xmake rebuild everything.<br>
+(Use `xmake b -r -q` after the `&&` to have xmake rebuild everything.<br>
 It's only needed if you previously built cppfetch with/without music and want the opposite.)
 
 ## Example output

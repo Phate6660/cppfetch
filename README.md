@@ -13,7 +13,7 @@ Dependencies:
 
 \*(Should automatically be installed/compiled with xmake when the music option is enabled.<br>
 However if you find it doesn't install, open an issue with the message with the<br>
-output of xmake without `-q` and then try installing libmpdclient from a package manager<br>
+output of xmake and then try installing libmpdclient from a package manager<br>
 (though I'm usually really responsive so I'll probably have it fixed up for you before you have to).)
 
 ```bash
@@ -46,7 +46,6 @@ User:        valley
 You'll find the binary at: `./build/linux/ARCH/cppfetch`
 
 (Replace ARCH with your architecture, e.g. x86\_64.)
-
 ## TODO
 
 - ~~ASCII art~~

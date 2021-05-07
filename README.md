@@ -27,9 +27,7 @@ It's only needed if you previously built cppfetch with/without music and want th
 
 ## Example output
 
-`$ ./build/linux/ARCH/cppfetch`
-
-(Replace ARCH with your architecture, e.g. x86\_64.)
+`xmake run` or `xmake run cppfetch l` (if you want the logo to be displayed too)
 
 ```
 CPU:         Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz
@@ -44,6 +42,10 @@ Terminal:    xterm
 Uptime:      7d 0h 17m
 User:        valley
 ```
+
+You'll find the binary at: `./build/linux/ARCH/cppfetch`
+
+(Replace ARCH with your architecture, e.g. x86\_64.)
 
 ## TODO
 

@@ -9,7 +9,7 @@ option("music")
 option_end()
 
 if has_config("music") then
-    add_requires("libmpdclient", {system = false})
+    add_requires("libmpdclient")
 end
 
 target("cppfetch")
@@ -28,4 +28,3 @@ target("cppfetch")
     add_files("src/info/packages.cpp")
     add_files("src/info/term.cpp")
     add_files("src/info/uptime.cpp")
-

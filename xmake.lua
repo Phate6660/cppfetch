@@ -15,6 +15,12 @@ end
 target("cppfetch")
     set_kind("binary")
     set_options("music")
+    on_load(function (target)
+        local _, compiler_name = target:tool("cc")
+        if compiler_name == "clang" then
+            print("WARNING: BUILDING WITH CLANG IS UNSUPPORTED (IN FACT IT'S BROKEN), PLEASE CONTINUE AT YOUR OWN RISK.")
+        end
+    end)
     add_files("src/main.cpp")
     add_files("src/helpers/functions.cpp")
     add_files("src/info/cpu.cpp")

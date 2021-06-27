@@ -4,6 +4,7 @@
 # Whitelist the gitignore, license, readme, meson config,
 # and all files in the source dir.
 !.gitignore
+!build-static
 !LICENSE
 !README.md
 !src/

@@ -25,21 +25,32 @@ xmake # or `xmake f --music=y && xmake` if you want to enable music info
 (Use `xmake -r` after the `&&` to have xmake rebuild everything.<br>
 It's only needed if you previously built cppfetch with/without music and want the opposite.)
 
+You may also statically build the program with `./build-static`.<br>
+It only requires g++ and strip (which you should already have if you're building programs :D).<br>
+However, building with music support only works if you built libmpdclient as a static lib.<br>
+If you have done that and want music support, then run `./build-static true`.
+
 ## Example output
 
 `xmake run` or `xmake run cppfetch l` (if you want the logo to be displayed too)
 
 ```
+ ██████╗██████╗ ██████╗ ███████╗███████╗████████╗ ██████╗██╗  ██╗
+██╔════╝██╔══██╗██╔══██╗██╔════╝██╔════╝╚══██╔══╝██╔════╝██║  ██║
+██║     ██████╔╝██████╔╝█████╗  █████╗     ██║   ██║     ███████║
+██║     ██╔═══╝ ██╔═══╝ ██╔══╝  ██╔══╝     ██║   ██║     ██╔══██║
+╚██████╗██║     ██║     ██║     ███████╗   ██║   ╚██████╗██║  ██║
+ ╚═════╝╚═╝     ╚═╝     ╚═╝     ╚══════╝   ╚═╝    ╚═════╝╚═╝  ╚═╝
 CPU:         Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz
 Distro:      Gentoo/Linux
-Editor:      /usr/bin/emacsclient
+Editor:      /usr/bin/nvim
 Environment: herbstluftwm
 Memory:      15966MB
-Music:       Pantera - Vulgar Display of Power - Regular People (Conceit)
-Packages:    715 (Portage), 16 (pip)
+Music:       Guerrilla Warfare - C O N S U M E - Headlines
+Packages:    594 (Portage)
 Shell:       /bin/bash
-Terminal:    xterm
-Uptime:      7d 0h 17m
+Terminal:    bash
+Uptime:      5d 10h 14m
 User:        valley
 ```
 

@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+COMMON_ARGS="-march=native -std=c++2a -static -o cppfetch src/main.cpp src/helpers/functions.cpp"
+
+if [ "$1" == true ]; then
+    ARGS=(src/info/*.cpp)
+    ARGS+=("-lmpdclient")
+else
+    ARGS=(src/info/{cpu,distro,environment,memory,packages,term,uptime}.cpp)
+fi
+
+# Compile the binary.
+COMMAND="g++ ${COMMON_ARGS} ${ARGS[*]}"
+eval "${COMMAND}"
+# Strip the binary (usually for things like debug symbols).
+strip cppfetch
+# For verifying if the binary is static and stripped.
+file cppfetch

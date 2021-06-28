@@ -40,12 +40,20 @@ std::string get_pname(std::string pid) {
 std::string find_terminal(std::string ppid) {
     std::string pppid = get_pid(ppid);
     std::string pppname = get_pname(ppid);
-    /* If the process name is "bash", keep going to look for an actual terminal.
+    /* If the process name is "bash" or "general" (a script I made for general functions),
+     * keep going to look for an actual terminal. I often use a nested bash session inside
+     * of a bash session, so check for it one more time as well. That should be all that's needed.
      * TODO: Add more exceptionms, IIRC from other fetch programs I worked on, I need
      * to add workarounds for running in scripts, tmux, and
      * I believe there was a systemd issue too. */
-    if (pppname == "bash") {
-        return get_pname(pppid);
+    if (pppname == "bash" || pppname == "general") {
+        std::string new_pppname = get_pname(pppid);
+        if (new_pppname == "bash") {
+            std::string new_pppid = get_pid(pppid);
+            return get_pname(new_pppid);
+        } else {
+            return new_pppname;
+        }
     } else {
         return pppname;
     }

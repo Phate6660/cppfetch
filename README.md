@@ -19,10 +19,10 @@ output of xmake and then try installing libmpdclient from a package manager<br>
 ```bash
 git clone https://github.com/Phate6660/cppfetch
 cd cppfetch
-xmake # or `xmake f --music=y && xmake` if you want to enable music info
+xmake # or `xmake f --music=y -v && xmake -v` if you want to enable music info
 ```
 
-(Use `xmake -r` after the `&&` to have xmake rebuild everything.<br>
+(Use `xmake -rv` after the `&&` to have xmake rebuild everything.<br>
 It's only needed if you previously built cppfetch with/without music and want the opposite.)
 
 You may also statically build the program with `./build-static`.<br>
@@ -46,11 +46,11 @@ Distro:      Gentoo/Linux
 Editor:      /usr/bin/nvim
 Environment: herbstluftwm
 Memory:      15966MB
-Music:       Guerrilla Warfare - C O N S U M E - Headlines
+Music:       Electric Six - I Shall Exterminate Everything Around Me That Restricts Me From Being The Master - It's Showtime!
 Packages:    594 (Portage)
 Shell:       /bin/bash
-Terminal:    bash
-Uptime:      5d 10h 14m
+Terminal:    xterm
+Uptime:      6d 3h 44m
 User:        valley
 ```
 

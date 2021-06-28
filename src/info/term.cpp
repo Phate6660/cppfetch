@@ -43,7 +43,7 @@ std::string find_terminal(std::string ppid) {
     /* If the process name is "bash", keep going to look for an actual terminal.
      * TODO: Add more exceptionms, IIRC from other fetch programs I worked on, I need
      * to add workarounds for running in scripts, tmux, and
-     * I believe there was a systemd issue too.*/
+     * I believe there was a systemd issue too. */
     if (pppname == "bash") {
         return get_pname(pppid);
     } else {

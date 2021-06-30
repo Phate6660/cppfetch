@@ -3,8 +3,7 @@
 COMMON_ARGS="-march=native -std=c++2a -static -o cppfetch src/main.cpp src/helpers/functions.cpp"
 
 if [ "$1" == true ]; then
-    ARGS=(src/info/*.cpp)
-    ARGS+=("-lmpdclient")
+    ARGS=("-DMUSIC" src/info/*.cpp "-lmpdclient")
 else
     ARGS=(src/info/{cpu,distro,environment,memory,packages,term,uptime}.cpp)
 fi

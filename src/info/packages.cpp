@@ -41,6 +41,8 @@ static PackageManager findPackageManager() {
         return RPM;
     } else if (std::system("which xbps-query > /dev/null 2>&1") == 0) {
         return XBPS;
+    } else if (std::system("which emerge > /dev/null 2>&1") == 0) {
+        return EMERGE;
     } else {
         return UNKNOWN;
     }

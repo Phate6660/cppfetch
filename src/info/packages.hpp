@@ -10,4 +10,5 @@ enum PackageManager {
     QLIST,  // qlist -- list package info for Portage.
     RPM,    // rpm -- like dnf.
     XBPS,   // xbps -- Void Linux's package manager.
+    EMERGE, // emerge -- Portage package manager.
 };
